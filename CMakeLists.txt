@@ -5,8 +5,8 @@ set(CMAKE_C_STANDARD 11)
 
 add_library(
         filterparser
-        library.c
-        struct.c
+        src/library.c
+        src/struct.c
 )
 find_package(PythonInterp 3.10 REQUIRED)
 find_package(PythonLibs 3.10 REQUIRED)

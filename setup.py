@@ -3,9 +3,10 @@ from setuptools import setup, Extension
 module = Extension(
     "filterparser",
     sources=[
-        "library.c",
-        "struct.c",
-    ]
+        "src/library.c",
+        "src/struct.c",
+    ],
+    include_dirs=["src", ]
 )
 
 setup(

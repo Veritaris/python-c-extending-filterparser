@@ -26,9 +26,11 @@ parsed_filter_init(parsed_filter_t *self, PyObject *args, PyObject *kwds) {
     if (!PyArg_ParseTupleAndKeywords(
             args,
             kwds,
-            "|idb",
-            kwlist, &self->filter_type, &self->filter_value,
-                                     &self->filter_key)) {
+            "|iss",
+            kwlist,
+            &self->filter_type,
+            &self->filter_value,
+            &self->filter_key)) {
         return -1;
     }
     return 0;
@@ -48,8 +50,12 @@ static PyObject *parsed_filter_s_print(PyObject *self, PyObject *args) {
         Py_RETURN_NONE;
     }
 
-    printf("method: filter_type: %d, filter_value: %s, filter_key: %s\n", st->filter_type, st->filter_value,
-           st->filter_key);
+    printf(
+            "method: filter_type: %d, filter_value: %s, filter_key: %s\n",
+            st->filter_type,
+            st->filter_value,
+            st->filter_key
+    );
     Py_RETURN_NONE;
 };
 
